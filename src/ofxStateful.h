@@ -35,6 +35,10 @@ public:
     return ofGetElapsedTimeMillis() - state_start_at;
   }
 
+  string curStateName() {
+    return state_names[state];
+  }
+
   virtual void onEnterState() = 0;
   virtual void onExitState() = 0;
 
