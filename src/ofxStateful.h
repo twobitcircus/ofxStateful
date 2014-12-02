@@ -35,6 +35,10 @@ public:
     return ofGetElapsedTimeMillis() - state_start_at;
   }
 
+  state_t curState() {
+    return state;
+  }
+
   string curStateName() {
     return state_names[state];
   }
