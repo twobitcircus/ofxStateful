@@ -4,9 +4,6 @@ class ofxStateful {
 public:
   void setup_sm() {
     ofAddListener(ofEvents().update, this, &ofxStateful::update_sm); 
-    RUI_SETUP();
-    RUI_NEW_GROUP("STATE");
-    RUI_SHARE_ENUM_PARAM(public_state, START, NUM_STATES-1, vector<string>(state_names, state_names+NUM_STATES));
     first_update = true;
   }
 
@@ -27,7 +24,6 @@ public:
     state_start_at = ofGetElapsedTimeMillis();
     public_state = state = _state;
     cur_state_name = state_names[state];
-    //OFX_REMOTEUI_SERVER_PUSH_TO_CLIENT();
     onEnterState();
   }
 
