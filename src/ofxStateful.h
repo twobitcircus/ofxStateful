@@ -1,5 +1,3 @@
-#include "ofxRemoteUIServer.h"
-
 class ofxStateful {
 public:
   void setup_sm() {
@@ -39,8 +37,10 @@ public:
     return state_names[state];
   }
 
-  virtual void onEnterState() = 0;
-  virtual void onExitState() = 0;
+  virtual void onEnterState() {
+  }
+  virtual void onExitState() {
+  }
 
 protected:
   state_t public_state;
