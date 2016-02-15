@@ -1,3 +1,11 @@
+// begin magical preprocessor incantation
+#define C(x) x,
+typedef enum { STATES NUM_STATES } state_t;
+#undef C
+#define C(x) #x,
+const char* const state_names[] = { STATES };
+// end magical incantation
+
 class ofxStateful {
 public:
   void setup_sm() {
